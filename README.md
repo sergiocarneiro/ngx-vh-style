@@ -4,7 +4,7 @@
 
 *ngx-vh-style* is an angular directive that allows to apply viewport height (VH) values in pixels, assuring maximum browser compatibility.
 
------------
+
 
 # Purpose
 
@@ -12,7 +12,7 @@ Viewport height is usually referred to as the window's inner height in %.
 
 However, browsers such as Chrome Mobile make their toolbar height count towards the viewport height, making the inner height inaccessible through CSS if the element is not relatively parented to the body — which can easily happen when using component-driven frameworks like [Ionic](http://ionicframework.com).
 
------------
+
 
 # Setup
 
@@ -32,7 +32,7 @@ import { VhStyleModule } from 'ngx-vh-style';
 })
 ```
 
------------
+
 
 # Usage
 Simply write the CSS styles as you would normally do with the style attribute.
@@ -41,7 +41,7 @@ Simply write the CSS styles as you would normally do with the style attribute.
 <div vhStyle="max-height: 100vh"></div>
 ```
 
------------
+
 
 # Features
 
@@ -63,12 +63,10 @@ Simply write the CSS styles as you would normally do with the style attribute.
 <div vhStyle="background-size: 500px 50vh"></div>
 ```
 
------------
+
 
 # Known Limitations
 
 ## Media Queries
 
 Media queries are currently not supported.
-
-Future updates may implement this feature if demand appears.
