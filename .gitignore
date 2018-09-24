@@ -1,0 +1,9 @@
+dist/
+node_modules/
+
+*.log
+
+*.js.map
+*[!gulpfile].js
+
+.DS_Store

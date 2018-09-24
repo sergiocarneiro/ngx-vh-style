@@ -1,0 +1,43 @@
+{
+  "name": "ngx-vh-style",
+  "version": "0.1.0",
+  "description": "Applies viewport height (VH) values in pixels, assuring maximum browser compatibility.",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "gulp clean-ts && node_modules/.bin/ngc -p tsconfig.json",
+    "push": "npm run build && npm publish && git add . && git commit -m $(node -pe 'JSON.parse(process.argv[1]).version' \"$(cat package.json)\") && git push origin master"
+  },
+  "devDependencies": {
+    "@angular/core": "6.1.1",
+    "@angular/compiler": "6.1.1",
+    "@angular/compiler-cli": "6.1.1",
+    "chai": "3.5.0",
+    "del": "2.2.2",
+    "gulp": "3.9.1",
+    "gulp-rename": "1.2.2",
+    "gulp-shell": "0.5.2",
+    "gulp-sourcemaps": "2.4.0",
+    "gulp-typescript": "3.1.6",
+    "merge2": "1.0.2",
+    "rxjs": "6.2.2",
+    "typescript": "2.9.2",
+    "zone.js": "0.8.26"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiocarneiro/ngx-vh-style.git"
+  },
+  "keywords": [
+    "angular2",
+    "directive",
+    "styling",
+    "responsive"
+  ],
+  "author": "Sérgio Carneiro <sergio.carneiro21@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sergiocarneiro/ngx-vh-/issues"
+  },
+  "homepage": "https://github.com/sergiocarneiro/ngx-vh-style#readme"
+}
