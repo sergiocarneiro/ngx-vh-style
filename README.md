@@ -6,6 +6,16 @@
 
 
 
+# Table of Contents
+
+* [Purpose](#purpose)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Features](#features)
+* [Known Limitations](#known-limitations)
+
+
+
 # Purpose
 
 Viewport height is usually referred to as the window's inner height in %.
@@ -14,14 +24,14 @@ However, browsers such as Chrome Mobile make their toolbar height count towards 
 
 
 
-# Setup
+# Installation
 
 Install via npm:
 ```
-npm install --save-exact ngx-vh-style
+npm install --save-dev ngx-vh-style
 ```
 
-Include the module in the imports list of your app's module:
+Import the `VhStyleModule`:
 ```js
 import { VhStyleModule } from 'ngx-vh-style';
 

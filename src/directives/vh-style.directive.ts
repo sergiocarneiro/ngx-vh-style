@@ -1,4 +1,4 @@
-import { Directive, Input, ElementRef, Renderer2, OnInit, HostListener } from '@angular/core';
+import { Directive, Input, ElementRef, Renderer2, OnInit, HostListener } from "@angular/core";
 
 /**
  * Applies viewport height (VH) values in pixels, assuring maximum browser compatibility.
@@ -7,12 +7,12 @@ import { Directive, Input, ElementRef, Renderer2, OnInit, HostListener } from '@
  * making the inner height inaccessible through CSS if the element is not relatively parented to the body.*
  */
 @Directive({
-  selector: '[vhStyle]'
+  selector: "[vhStyle]"
 })
 export class VhStyleDirective implements OnInit
 {
   // #region Fields
-  @Input('vhStyle') properties: string;
+  @Input("vhStyle") properties: string;
   // #endregion
 
   // #region Properties
@@ -34,7 +34,7 @@ export class VhStyleDirective implements OnInit
   // #endregion
 
   // #region Events
-  @HostListener('window:resize')
+  @HostListener("window:resize")
   onWindowResize() {
     this.apply();
   }
@@ -49,7 +49,7 @@ export class VhStyleDirective implements OnInit
 
     this.properties
       // Find each property by spliting by semicolon
-      .split(';')
+      .split(";")
       // Remove empty entries
       .filter(property => property.length > 0)
       // Remove leading and trailing spaces
@@ -58,10 +58,10 @@ export class VhStyleDirective implements OnInit
       .forEach((property: string) =>
       {
         const el = this.element.nativeElement as HTMLElement;
-        const propertyName: string = property.substring(0, property.indexOf(':')).split(' ').join();
-        const propertyValues: string[] = property.substr(property.indexOf(':') + 1).split(' ');
+        const propertyName: string = property.substring(0, property.indexOf(":")).split(" ").join();
+        const propertyValues: string[] = property.substr(property.indexOf(":") + 1).split(" ");
 
-        let outputValue = '';
+        let outputValue = "";
 
         // Convert each VH value of the property — properties such as `background-size` can have multiple values
         propertyValues
@@ -70,12 +70,12 @@ export class VhStyleDirective implements OnInit
           {
             // Add space
             if (outputValue.length > 0) {
-              outputValue += ' ';
+              outputValue += " ";
             }
 
             // Is a VH value
-            if (value.endsWith('vh')) {
-              outputValue += this.vhInPx * Number(value.substr(0, value.length - 2)) * 0.01 + 'px';
+            if (value.endsWith("vh")) {
+              outputValue += this.vhInPx * Number(value.substr(0, value.length - 2)) * 0.01 + "px";
             }
             else {
               outputValue += value;
